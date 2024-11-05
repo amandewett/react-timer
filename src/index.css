@@ -1,0 +1,18 @@
+:root {
+  font-family: "Space Mono", monospace;
+  font-weight: 600;
+  font-style: normal;
+  --app-color-black: #252422;
+  --app-color-white: #EB5E28;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--app-color-black);
+  color: var(--app-color-white);
+}

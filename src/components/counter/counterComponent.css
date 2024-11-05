@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 10px;
+}
+
+.timer-container {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #403d39;
+    border-radius: 16px;
+    margin-left: 2rem;
+    overflow: hidden;
+}
+
+.large-container {
+    width: 300px;
+}
+
+.card-divider {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 5px;
+    background-color: var(--app-color-black);
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.h4-timer-type {
+    font-weight: bolder;
+    font-size: 1.8rem;
+}
