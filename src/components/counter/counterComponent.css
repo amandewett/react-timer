@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     background-color: #403d39;
-    border-radius: 16px;
+    border-radius: 10px;
     margin-left: 2rem;
     overflow: hidden;
 }
@@ -43,3 +43,10 @@
     font-weight: bolder;
     font-size: 1.8rem;
 }
+
+/* @media (min-width: 1400px) {
+    .card-container {
+        width: 150px;
+        height: 150px;
+    }
+} */

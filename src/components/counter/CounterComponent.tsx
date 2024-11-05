@@ -17,7 +17,7 @@ const CounterComponent: React.FC<CounterComponentProps> = ({ eventTime }) => {
 
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column", marginTop: "200px", gap: "50px" }}>
+      <div style={{ display: "flex", flexDirection: "column", marginTop: "100px", gap: "50px" }}>
         <section className="timer-container">
           <AppFlipNumberContainer value={remainingCounter.years} type="Years" isExpanded={remainingCounter.years.toString().length <= 2 ? false : true} />
           <AppFlipNumberContainer value={remainingCounter.months} type="Months" isExpanded={remainingCounter.months.toString().length <= 2 ? false : true} />
