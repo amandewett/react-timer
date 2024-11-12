@@ -8,6 +8,7 @@
 .timer-container {
     width: 100vw;
     display: flex;
+    gap: 2rem;
     align-items: center;
     justify-content: center;
 }
@@ -21,7 +22,7 @@
     align-items: center;
     background-color: #403d39;
     border-radius: 10px;
-    margin-left: 2rem;
+    /* margin-left: 2rem; */
     overflow: hidden;
 }
 
@@ -44,9 +45,40 @@
     font-size: 1.8rem;
 }
 
-/* @media (min-width: 1400px) {
+@media (max-width: 1536px) {
+    .card-container {
+        width: 190px;
+        height: 190px;
+    }
+
+    .large-container {
+        width: 280px;
+    }
+}
+
+@media (max-width: 1000px) {
     .card-container {
         width: 150px;
         height: 150px;
     }
-} */
+
+    .large-container {
+        width: 240px;
+    }
+}
+
+@media (max-width: 700px) {
+    .card-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .large-container {
+        width: 200px;
+    }
+
+    .h4-timer-type {
+        font-weight: bolder;
+        font-size: 1rem;
+    }
+}
