@@ -22,7 +22,6 @@
     align-items: center;
     background-color: #403d39;
     border-radius: 10px;
-    /* margin-left: 2rem; */
     overflow: hidden;
 }
 
@@ -36,7 +35,7 @@
     z-index: 1;
     height: 5px;
     background-color: var(--app-color-black);
-    top: 50%;
+    top: 49%;
     transform: translateY(50%);
 }
 
@@ -54,6 +53,11 @@
     .large-container {
         width: 280px;
     }
+
+    .h4-timer-type {
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -64,6 +68,16 @@
 
     .large-container {
         width: 240px;
+    }
+
+    .h4-timer-type {
+        font-weight: bolder;
+        font-size: 1.3rem;
+    }
+
+    .card-divider {
+        top: 48%;
+        height: 4px;
     }
 }
 
@@ -79,6 +93,11 @@
 
     .h4-timer-type {
         font-weight: bolder;
-        font-size: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .card-divider {
+        top: 47%;
+        height: 3px;
     }
 }

@@ -7,7 +7,7 @@ import useScreenSize from "../../hooks/useScreenSize";
 
 const CounterComponent: React.FC<CounterComponentProps> = ({ eventTime }) => {
   const [remainingCounter, setRemainingCounter] = useState<CalculateTimeReturnType>(remainingTime(eventTime));
-  const { width, height } = useScreenSize();
+  const { width } = useScreenSize();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -19,8 +19,6 @@ const CounterComponent: React.FC<CounterComponentProps> = ({ eventTime }) => {
 
   return (
     <>
-      <span>Width: {width}px</span>
-      <span> Height: {height}px</span>
       <div style={{ display: "flex", flexDirection: "column", marginTop: "100px", gap: "50px" }}>
         <section className="timer-container">
           <AppFlipNumberContainer value={remainingCounter.years} type="Years" isExpanded={remainingCounter.years.toString().length <= 2 ? false : true} />
