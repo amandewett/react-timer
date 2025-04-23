@@ -27,9 +27,9 @@ export const remainingTime = (eventTime: number): CalculateTimeReturnType => {
   const days = totalDaysRemaining % 7;
 
   // Remaining time of today
-  const hours = 23 - now.getHours(); // Hours left in today
-  const minutes = 59 - now.getMinutes(); // Minutes left in current hour
-  const seconds = 59 - now.getSeconds(); // Seconds left in current minute
+  const hours = 23 - now.getHours();
+  const minutes = 59 - now.getMinutes();
+  const seconds = 59 - now.getSeconds();
 
   return { years, months: totalMonthsRemaining, weeks, days: totalDaysRemaining, hours, minutes, seconds };
 };
