@@ -6,7 +6,7 @@ import useScreenSize from "../../hooks/useScreenSize";
 
 const CounterBackground: React.FC<CounterBackgroundProps> = ({ isExpanded = false, ...props }) => {
   const { width } = useScreenSize();
-  let nWidth = width <= 700 ? 50 : width <= 1000 ? 80 : width <= 1536 ? 90 : 100;
+  const nWidth = width <= 700 ? 50 : width <= 1000 ? 80 : width <= 1536 ? 90 : 100;
 
   return (
     <section className="container">

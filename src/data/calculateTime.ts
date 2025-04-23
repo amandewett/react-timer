@@ -1,38 +1,35 @@
 import { CalculateTimeReturnType } from "../types";
 
 export const remainingTime = (eventTime: number): CalculateTimeReturnType => {
-  const currentTime = new Date().getTime();
-  const timeDifference = eventTime - currentTime;
+  const now = new Date();
+  const future = new Date(eventTime);
 
-  if (timeDifference <= 0) {
-    return { years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+  if (future <= now) return { years: 0, months: 0, weeks: 0, days: 0, hours: 0, minutes: 0, seconds: 0 };
+
+  //time difference in milliseconds
+  const totalMilliseconds = future.getTime() - now.getTime();
+
+  //total full days between now and event time
+  const totalDaysRemaining = Math.floor(totalMilliseconds / (1000 * 60 * 60 * 24));
+
+  let years = future.getFullYear() - future.getFullYear();
+  let months = future.getMonth() - future.getMonth();
+
+  if (months < 0) {
+    years--;
+    months += 12;
   }
 
-  const oneSecondInMillisecond = 1000;
-  const oneMinuteInMillisecond = oneSecondInMillisecond * 60;
-  const oneHourInMillisecond = oneMinuteInMillisecond * 60;
-  const oneDayInMillisecond = oneHourInMillisecond * 24;
-  const oneWeekInMillisecond = oneDayInMillisecond * 7;
-  const oneMonthInMillisecond = oneDayInMillisecond * 30;
-  const oneYearInMillisecond = oneMonthInMillisecond * 12;
+  const totalMonthsRemaining = (future.getFullYear() - now.getFullYear()) * 12 + (future.getMonth() - now.getMonth());
 
-  const years = Math.floor(timeDifference / oneYearInMillisecond);
-  const remainingAfterYears = timeDifference % oneYearInMillisecond;
+  // Convert total days into weeks and leftover days
+  const weeks = Math.floor(totalDaysRemaining / 7);
+  const days = totalDaysRemaining % 7;
 
-  const months = Math.floor(timeDifference / oneMonthInMillisecond);
-  const remainingAfterMonths = remainingAfterYears % oneMonthInMillisecond;
+  // Remaining time of today
+  const hours = 23 - now.getHours(); // Hours left in today
+  const minutes = 59 - now.getMinutes(); // Minutes left in current hour
+  const seconds = 59 - now.getSeconds(); // Seconds left in current minute
 
-  const weeks = Math.floor(timeDifference / oneWeekInMillisecond);
-  const remainingAfterWeeks = remainingAfterMonths % oneWeekInMillisecond;
-
-  const days = Math.floor(timeDifference / oneDayInMillisecond);
-  const remainingAfterDays = remainingAfterWeeks % oneDayInMillisecond;
-
-  const hours = Math.floor(remainingAfterDays / oneHourInMillisecond);
-  const remainingAfterHours = remainingAfterDays % oneHourInMillisecond;
-
-  const minutes = Math.floor(remainingAfterHours / oneMinuteInMillisecond);
-  const seconds = Math.floor((remainingAfterHours % oneMinuteInMillisecond) / oneSecondInMillisecond);
-
-  return { years, months, weeks, days, hours, minutes, seconds };
+  return { years, months: totalMonthsRemaining, weeks, days: totalDaysRemaining, hours, minutes, seconds };
 };

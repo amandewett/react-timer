@@ -15,7 +15,7 @@ const CounterComponent: React.FC<CounterComponentProps> = ({ eventTime }) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  });
 
   return (
     <>
