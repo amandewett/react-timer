@@ -24,7 +24,7 @@ export const remainingTime = (eventTime: number): CalculateTimeReturnType => {
 
   // Convert total days into weeks and leftover days
   const weeks = Math.floor(totalDaysRemaining / 7);
-  const days = totalDaysRemaining % 7;
+  // const days = totalDaysRemaining % 7;
 
   // Remaining time of today
   const hours = 23 - now.getHours();
